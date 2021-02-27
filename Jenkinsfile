@@ -13,7 +13,11 @@ pipeline {
 
     stage('Example') {
       when {
-        branch 'production'
+        anyOf {
+          branch 'master'
+          branch 'staging'
+        }
+
       }
       input {
         message 'Should we continue?'
