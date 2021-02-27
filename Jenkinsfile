@@ -13,9 +13,9 @@ pipeline {
 
     stage('Example') {
       when {
-        anyOf {
+        allOf {
           anyOf {
-            branch 'main'
+            branch 'main1'
             branch 'staging'
           }
 
