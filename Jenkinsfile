@@ -12,6 +12,9 @@ pipeline {
     }
 
     stage('Example') {
+      when {
+        branch 'production'
+      }
       input {
         message 'Should we continue?'
         id 'Yes, we should.'
