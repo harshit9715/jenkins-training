@@ -14,9 +14,12 @@ pipeline {
     stage('Example') {
       when {
         allOf {
-          anyOf {
-            branch 'main1'
-            branch 'staging'
+          not {
+            anyOf {
+              branch 'main1'
+              branch 'staging'
+            }
+
           }
 
           triggeredBy 'SCMTrigger'
