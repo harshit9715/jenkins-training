@@ -21,4 +21,14 @@ pipeline {
     }
 
   }
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '1'))
+    disableConcurrentBuilds()
+    disableResume()
+    preserveStashes(buildCount: 5)
+    quietPeriod(15)
+    retry(3)
+    skipStagesAfterUnstable()
+    timeout(time: 10, unit: 'SECONDS')
+  }
 }
