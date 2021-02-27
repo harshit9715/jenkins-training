@@ -22,7 +22,6 @@ pipeline {
 
           }
 
-          triggeredBy 'SCMTrigger'
         }
 
       }
